@@ -1,0 +1,302 @@
+:root {
+  --blue-silver: #c0d6e4;  /* warna latar biru silver */
+  --blue-gradient: #a2c2e2; /* gradien biru lembut */
+  --dark-blue: #005f99;
+  --text: #050000;
+  --shadow: 0 10px 25px rgba(0, 95, 153, 0.15);
+  --font-main: 'Poppins', sans-serif;
+  --font-title: 'Playfair Display', serif;
+}
+
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+  scroll-behavior: smooth; 
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--text);
+  background: var(--blue-silver);
+  overflow-x: hidden;
+}
+
+/* Hero Background */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('p.png') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+}
+
+/* Overlay gelap tipis agar teks terlihat */
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 95, 153, 0.25);
+  z-index: 1;
+}
+
+/* ===== TEKS BAGIAN ATAS (Judul & Nama) ===== */
+.hero-top-text {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  backdrop-filter: none;
+  padding: 0;
+  border-radius: 0;
+  text-align: center;
+  z-index: 2;
+}
+
+.hero-top-text h1 {
+  font-family: var(--font-title);
+  font-size: 2.5em;              /* 📏 ukuran besar seperti contoh */
+  font-weight: 700;
+  color: var(--dark-blue);
+  margin: 0;
+}
+
+.hero-top-text h2 {
+  font-family: var(--font-title);
+  font-size: 1.5em;              /* 📏 sedikit lebih kecil dari judul */
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+/* ===== TEKS BAGIAN BAWAH ===== */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: var(--text);
+  padding: 20px;
+  margin-bottom: 40px; 
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  backdrop-filter: blur(2px);
+  max-width: 90%;
+}
+
+.hero-content p {
+  margin-bottom: 15px;
+  font-size: 1em;
+  color: #000;
+}
+
+.btn {
+  background: linear-gradient(90deg, var(--dark-blue), var(--blue-gradient));
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: var(--shadow);
+  transition: 0.3s ease;
+}
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-3px);
+}
+
+/* Responsive Hero Text */
+@media (max-width: 768px) {
+  .hero-top-text {
+    top: 60px;
+  }
+  .hero-top-text h1 {
+    font-size: 2em;
+  }
+  .hero-top-text h2 {
+    font-size: 1.2em;
+  }
+}
+
+/* Details */
+.details {
+  padding: 70px 20px;
+  text-align: center;
+  background: var(--blue-silver);
+}
+.details h2 {
+  font-family: var(--font-title);
+  color: var(--dark-blue);
+  margin-bottom: 20px;
+}
+.details .card {
+  background: #ffffff48;
+  box-shadow: var(--shadow);
+  border-radius: 15px;
+  padding: 25px;
+  display: inline-block;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.btn-secondary {
+  background: var(--dark-blue);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.btn-secondary:hover {
+  opacity: 0.9;
+}
+
+/* Ucapan */
+.ucapan {
+  background: linear-gradient(180deg, var(--blue-silver), var(--blue-gradient));
+  padding: 70px 20px;
+  text-align: center;
+}
+.ucapan h2 {
+  font-family: var(--font-title);
+  color: var(--dark-blue);
+  margin-bottom: 15px;
+}
+.ucapan p {
+  max-width: 600px;
+  margin: 0 auto 25px;
+  color: #000000;
+}
+
+/* Footer */
+footer {
+  background: var(--blue-silver);
+  text-align: center;
+  padding: 40px 20px;
+  font-family: var(--font-title);
+  box-shadow: 0 -3px 10px rgba(0,0,0,0.05);
+}
+footer h3 {
+  color: var(--dark-blue);
+  margin-top: 5px;
+}
+footer small {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--font-main);
+  color: #000000;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* whatsapp */
+.kontak {
+  padding: 60px 20px;
+  background: linear-gradient(180deg, var(--blue-silver), var(--blue-gradient));
+  text-align: center;
+}
+.kontak h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--dark-blue);
+  margin-bottom: 15px;
+}
+.kontak p {
+  max-width: 600px;
+  margin: 0 auto 25px;
+  color: #000000;
+}
+.kontak-btn {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.kontak-btn a {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+.kontak-btn .wa-btn {
+  background: #25d366;
+}
+.kontak-btn .tel-btn {
+  background: #000000;
+}
+.kontak-btn a:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
+/* Nama Tamu */
+.nama-tamu {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  color: #000000;
+}
+.nama-tamu p {
+  font-size: 1em;
+  color: #000000;
+}
+.nama-tamu h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5em;
+  color: #000000;
+  margin-top: 30px;
+}
+footer .judul-undangan {
+  font-weight: 900;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 10px;
+}
+footer .pengundang {
+  text-align: center;
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  font-size: 1.1em;
+  color: #000000d6;
+}
+footer small {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #000000;
+}
+
+.pengundang-box {
+  background: linear-gradient(180deg, var(--blue-silver), var(--blue-gradient));
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  margin: 40px auto;
+  max-width: 600px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.pengundang-box h3 {
+  font-family: var(--font-title);
+  color: var(--dark-blue);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.pengundang-box p {
+  font-family: var(--font-main);
+  color: #000000;
+  line-height: 1.6;
+  margin: 5px 0;
+}
